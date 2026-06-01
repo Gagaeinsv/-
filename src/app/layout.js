@@ -1,4 +1,5 @@
 import "./globals.css";
+import "./mobile.css";
 
 import prisma from "@/lib/db";
 
