@@ -2378,12 +2378,12 @@ hr {
     linear-gradient(to right, rgba(229, 226, 209, 0.05) 0%, rgba(229, 226, 209, 0.25) 45%, rgba(229, 226, 209, 0.85) 75%, var(--color-bg) 95%),
     linear-gradient(to bottom, transparent 60%, var(--color-white) 100%),
     url('/bg3.jpg');
-  background-position: left 15%;
+  background-position: 5% 15%;
 }
 
 .bg-section-2 {
   background-image: linear-gradient(rgba(34, 44, 36, 0.75), rgba(34, 44, 36, 0.75)), url('/bg5.jpg');
-  background-position: left 20%;
+  background-position: 5% 20%;
 }
 
 .bg-section-3 {
@@ -2391,8 +2391,9 @@ hr {
     linear-gradient(to right, rgba(229, 226, 209, 0.05) 0%, rgba(229, 226, 209, 0.25) 45%, rgba(229, 226, 209, 0.85) 75%, var(--color-bg) 95%),
     linear-gradient(to bottom, transparent 70%, var(--color-white) 100%),
     url('/bg1.jpg');
-  background-position: left 15%;
+  background-position: 5% 15%;
 }
+
 
 .bg-section-4 {
   background-image: 
@@ -2416,7 +2417,7 @@ hr {
 
 .cindy-hero-grid {
   display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
+  grid-template-columns: 0.8fr 1.2fr;
   gap: 4rem;
   align-items: center;
 }
@@ -2463,7 +2464,7 @@ hr {
 
 .cindy-welcome-grid {
   display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
+  grid-template-columns: 0.8fr 1.2fr;
   gap: 4rem;
   align-items: flex-start;
 }
@@ -2644,10 +2645,16 @@ hr {
    ========================================================================== */
 .cindy-services-layout-grid,
 .cindy-faq-layout-grid,
-.cindy-booking-layout-grid,
 .cindy-quote-layout-grid {
   display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.cindy-booking-layout-grid {
+  display: grid;
+  grid-template-columns: 0.6fr 1.4fr;
   gap: 4rem;
   align-items: flex-start;
 }
