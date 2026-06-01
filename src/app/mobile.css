@@ -603,20 +603,18 @@
     background-attachment: scroll !important;
   }
   
-  .bg-section-hero,
-  .bg-section-welcome,
-  .bg-section-services,
-  .bg-section-faq {
+  .bg-section-1,
+  .bg-section-3 {
     background-image: none !important;
     background-color: var(--color-bg) !important;
   }
   
-  .bg-section-quote {
+  .bg-section-2 {
     background-image: linear-gradient(rgba(34, 44, 36, 0.8), rgba(34, 44, 36, 0.8)), url('/bg5.jpg') !important;
     background-position: center top !important;
   }
   
-  .bg-section-booking {
+  .bg-section-4 {
     background-image: 
       linear-gradient(to bottom, rgba(229, 226, 209, 0.15) 0%, rgba(229, 226, 209, 0.5) 250px, var(--color-bg) 380px, var(--color-bg) 100%), 
       url('/nature_booking_bg.png') !important;

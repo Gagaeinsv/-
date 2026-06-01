@@ -113,8 +113,8 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Background Section Hero */}
-      <div className="bg-section bg-section-hero">
+      {/* Background Section 1: Hero + About */}
+      <div className="bg-section bg-section-1">
         {/* Hero Section (Cindy Layout Clone: Left Image Hexagon, Right Tagline & Description) */}
         <section className="cindy-hero-section">
           <div className="container">
@@ -136,10 +136,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </div>
 
-      {/* Background Section Welcome */}
-      <div className="bg-section bg-section-welcome">
         {/* Welcome / Intro Section */}
         <section id="about" className="cindy-welcome-section">
           <div className="container">
@@ -175,8 +172,8 @@ export default function Home() {
         </section>
       </div>
 
-      {/* Background Section Quote */}
-      <div className="bg-section bg-section-quote">
+      {/* Background Section 2: Quote */}
+      <div className="bg-section bg-section-2">
         {/* Quote / Mission Section */}
         <section className="cindy-quote-section">
           <div className="container">
@@ -192,8 +189,8 @@ export default function Home() {
         </section>
       </div>
 
-      {/* Background Section Services */}
-      <div className="bg-section bg-section-services">
+      {/* Background Section 3: Services + FAQ */}
+      <div className="bg-section bg-section-3">
         {/* Services Offered Section */}
         <section id="services" className="cindy-services-section">
           <div className="container">
@@ -233,10 +230,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </div>
 
-      {/* Background Section FAQ */}
-      <div className="bg-section bg-section-faq">
         {/* FAQ Section */}
         <section id="faq" className="faq-section">
           <div className="container">
@@ -293,19 +287,21 @@ export default function Home() {
         </section>
       </div>
 
-      {/* Background Section Booking */}
-      <div className="bg-section bg-section-booking">
+      {/* Background Section 4: Booking */}
+      <div className="bg-section bg-section-4">
         {/* Booking and Calendar Section */}
         <section id="booking" className="booking-section">
           <div className="container">
-            <div className="booking-box-container">
-              <div className="mb-12 text-center">
-                <span className="section-badge">Онлайн-запис</span>
-                <h2>Записатися на консультацію</h2>
-                <p className="section-subtitle">Оберіть зручний час, введіть контакти та забронюйте сесію</p>
-              </div>
+            <div className="cindy-booking-layout-grid">
+              <div className="booking-portrait-col-empty"></div>
+              <div className="cindy-booking-content-col">
+                <div className="mb-12">
+                  <span className="section-badge">Онлайн-запис</span>
+                  <h2>Записатися на консультацію</h2>
+                  <p className="section-subtitle">Оберіть зручний час, введіть контакти та забронюйте сесію</p>
+                </div>
 
-
+                <div className="booking-box-container">
                   {profile.calendlyLink ? (
                     <div className="calendly-embed-wrapper">
                       <iframe 
@@ -430,8 +426,10 @@ export default function Home() {
                   )}
                 </div>
               </div>
-            </section>
+            </div>
           </div>
+        </section>
+      </div>
 
       {/* Footer Section */}
       <footer className="site-footer">

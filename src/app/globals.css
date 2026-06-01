@@ -2371,44 +2371,30 @@ hr {
   background-repeat: no-repeat;
   background-attachment: scroll;
   width: 100%;
-}.bg-section-hero {
+}
+
+.bg-section-1 {
   background-image: 
     linear-gradient(to right, rgba(229, 226, 209, 0.05) 0%, rgba(229, 226, 209, 0.25) 45%, rgba(229, 226, 209, 0.85) 75%, var(--color-bg) 95%),
     linear-gradient(to bottom, transparent 60%, var(--color-white) 100%),
     url('/bg3.jpg');
-  background-position: right top;
+  background-position: left 15%;
 }
 
-.bg-section-welcome {
-  background-image: 
-    linear-gradient(to right, rgba(229, 226, 209, 0.05) 0%, rgba(229, 226, 209, 0.25) 45%, rgba(229, 226, 209, 0.85) 75%, var(--color-bg) 95%),
-    linear-gradient(to bottom, transparent 60%, var(--color-white) 100%),
-    url('/bg4.jpg');
-  background-position: right top;
-}
-
-.bg-section-quote {
+.bg-section-2 {
   background-image: linear-gradient(rgba(34, 44, 36, 0.75), rgba(34, 44, 36, 0.75)), url('/bg5.jpg');
-  background-position: right top;
+  background-position: left 20%;
 }
 
-.bg-section-services {
+.bg-section-3 {
   background-image: 
     linear-gradient(to right, rgba(229, 226, 209, 0.05) 0%, rgba(229, 226, 209, 0.25) 45%, rgba(229, 226, 209, 0.85) 75%, var(--color-bg) 95%),
     linear-gradient(to bottom, transparent 70%, var(--color-white) 100%),
     url('/bg1.jpg');
-  background-position: left top;
+  background-position: left 15%;
 }
 
-.bg-section-faq {
-  background-image: 
-    linear-gradient(to right, rgba(229, 226, 209, 0.05) 0%, rgba(229, 226, 209, 0.25) 45%, rgba(229, 226, 209, 0.85) 75%, var(--color-bg) 95%),
-    linear-gradient(to bottom, transparent 70%, var(--color-white) 100%),
-    url('/bg2.jpg');
-  background-position: right top;
-}
-
-.bg-section-booking {
+.bg-section-4 {
   background-image: 
     linear-gradient(to right, rgba(229, 226, 209, 0.05) 0%, rgba(229, 226, 209, 0.25) 45%, rgba(229, 226, 209, 0.85) 75%, var(--color-bg) 95%),
     linear-gradient(to bottom, transparent 70%, var(--color-white) 100%),
@@ -2430,7 +2416,7 @@ hr {
 
 .cindy-hero-grid {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-columns: 1.25fr 0.75fr;
   gap: 4rem;
   align-items: center;
 }
@@ -2477,7 +2463,7 @@ hr {
 
 .cindy-welcome-grid {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-columns: 1.25fr 0.75fr;
   gap: 4rem;
   align-items: flex-start;
 }
@@ -2658,16 +2644,10 @@ hr {
    ========================================================================== */
 .cindy-services-layout-grid,
 .cindy-faq-layout-grid,
+.cindy-booking-layout-grid,
 .cindy-quote-layout-grid {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 4rem;
-  align-items: flex-start;
-}
-
-.cindy-booking-layout-grid {
-  display: grid;
-  grid-template-columns: 0.6fr 1.4fr;
+  grid-template-columns: 1.25fr 0.75fr;
   gap: 4rem;
   align-items: flex-start;
 }
