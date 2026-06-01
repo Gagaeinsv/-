@@ -605,11 +605,11 @@
   
   .bg-section-1 {
     background-image: linear-gradient(to bottom, rgba(229, 226, 209, 0.25) 0%, rgba(229, 226, 209, 0.7) 45%, var(--color-bg) 80%), url('/bg3.jpg') !important;
-    background-position: 10% 15% !important;
+    background-position: right 15% !important;
   }
   
   .bg-section-2 {
-    background-position: 10% 20% !important;
+    background-position: right 20% !important;
   }
   
   .bg-section-3 {
@@ -637,7 +637,9 @@
     text-align: center;
   }
   .hero-portrait-col-empty {
-    display: none !important;
+    display: block !important;
+    min-height: 280px !important;
+    width: 100% !important;
   }
 }
 
@@ -651,7 +653,9 @@
     gap: 2.5rem !important;
   }
   .welcome-portrait-col-empty {
-    display: none !important;
+    display: block !important;
+    min-height: 280px !important;
+    width: 100% !important;
   }
 }
 
@@ -673,8 +677,13 @@
   
   .services-portrait-col-empty,
   .faq-portrait-col-empty,
-  .booking-portrait-col-empty,
   .quote-portrait-col-empty {
+    display: block !important;
+    min-height: 280px !important;
+    width: 100% !important;
+  }
+  
+  .booking-portrait-col-empty {
     display: none !important;
   }
 }

@@ -3,6 +3,11 @@ import "./mobile.css";
 
 import prisma from "@/lib/db";
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export async function generateMetadata() {
   try {
     const profile = await prisma.profile.findFirst();

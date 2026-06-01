@@ -292,16 +292,14 @@ export default function Home() {
         {/* Booking and Calendar Section */}
         <section id="booking" className="booking-section">
           <div className="container">
-            <div className="cindy-booking-layout-grid">
-              <div className="booking-portrait-col-empty"></div>
-              <div className="cindy-booking-content-col">
-                <div className="mb-12">
-                  <span className="section-badge">Онлайн-запис</span>
-                  <h2>Записатися на консультацію</h2>
-                  <p className="section-subtitle">Оберіть зручний час, введіть контакти та забронюйте сесію</p>
-                </div>
+            <div className="booking-box-container">
+              <div className="mb-12 text-center">
+                <span className="section-badge">Онлайн-запис</span>
+                <h2>Записатися на консультацію</h2>
+                <p className="section-subtitle">Оберіть зручний час, введіть контакти та забронюйте сесію</p>
+              </div>
 
-                <div className="booking-box-container">
+
                   {profile.calendlyLink ? (
                     <div className="calendly-embed-wrapper">
                       <iframe 
@@ -426,10 +424,8 @@ export default function Home() {
                   )}
                 </div>
               </div>
-            </div>
+            </section>
           </div>
-        </section>
-      </div>
 
       {/* Footer Section */}
       <footer className="site-footer">
