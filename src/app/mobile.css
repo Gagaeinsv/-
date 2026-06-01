@@ -310,6 +310,7 @@
     height: 3px !important;
     background-color: var(--color-primary) !important;
     border-radius: 2px !important;
+    transition: transform 0.3s ease, opacity 0.3s ease !important;
   }
 
   .hamburger-btn.open .hamburger-line:nth-child(1) {
@@ -373,18 +374,19 @@
   .site-header {
     top: 0 !important;
     position: sticky !important;
-    background: rgba(250, 251, 251, 0.92) !important;
+    background: rgba(250, 246, 238, 0.95) !important; /* Warm, premium beige matching branding */
     backdrop-filter: blur(12px) !important;
     border-bottom: 1px solid var(--glass-border) !important;
     box-shadow: 0 2px 15px rgba(34, 44, 36, 0.04) !important;
     width: 100% !important;
+    transition: background-color 0.3s ease !important;
   }
 
   .header-container {
     height: auto !important;
     min-height: 65px !important;
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
@@ -394,19 +396,22 @@
   }
 
   .site-header .logo-name {
-    font-size: 1.15rem !important;
-    line-height: 1.2 !important;
+    font-size: 1.35rem !important;
+    line-height: 1.25 !important;
+    font-weight: 700 !important;
+    color: var(--color-primary) !important;
   }
 
   .site-header .logo-title {
-    font-size: 0.55rem !important;
-    letter-spacing: 0.05em !important;
+    font-size: 0.68rem !important;
+    letter-spacing: 0.08em !important;
     text-transform: uppercase !important;
     color: var(--color-text-muted) !important;
-    margin-top: 0.1rem !important;
-    line-height: 1.3 !important;
-    max-width: 240px !important;
+    margin-top: 0.15rem !important;
+    line-height: 1.35 !important;
+    max-width: 260px !important;
     white-space: normal !important;
+    display: block !important;
   }
 
   /* Hero Section Stacking & Formatting */
@@ -603,25 +608,23 @@
     height: 4px !important;
   }
 
-  /* Remove any animations/hover transitions causing shifts */
-  * {
-    transition: none !important;
-    animation: none !important;
+  /* Disable sticky hover effects on touch devices to prevent layout shifts */
+  @media (hover: none) {
+    .spec-card:hover, 
+    .service-card-new:hover, 
+    .principle-card:hover, 
+    .trust-card:hover, 
+    .about-portrait-card:hover, 
+    .hero-portrait-card:hover {
+      transform: none !important;
+      box-shadow: none !important;
+      border-color: var(--glass-border) !important;
+    }
   }
 
+  /* Retain smooth slide-in transitions on mobile navigation menu */
   .site-nav {
-    transition: right 0.3s cubic-bezier(0.25, 1, 0.5, 1) !important; /* Retain slide-in transition for mobile menu */
-  }
-
-  .spec-card:hover, 
-  .service-card-new:hover, 
-  .principle-card:hover, 
-  .trust-card:hover, 
-  .about-portrait-card:hover, 
-  .hero-portrait-card:hover {
-    transform: none !important;
-    box-shadow: none !important;
-    border-color: var(--glass-border) !important;
+    transition: right 0.3s cubic-bezier(0.25, 1, 0.5, 1) !important;
   }
 }
 
@@ -869,26 +872,30 @@
 
   /* Premium Mobile Footer overrides */
   .site-footer {
-    padding: 3rem 0 2rem !important;
+    padding: 3.5rem 0 2.5rem !important;
     background-color: var(--color-primary-light) !important;
   }
 
   .footer-container {
     display: flex !important;
     flex-direction: column !important;
-    gap: 2rem !important;
+    gap: 2.5rem !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
+    align-items: center !important;
   }
 
   .footer-brand,
   .footer-links,
   .footer-contacts {
-    padding-bottom: 1.5rem !important;
+    padding-bottom: 2rem !important;
     border-bottom: 1px solid rgba(22, 78, 78, 0.08) !important;
     width: 100% !important;
     box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
   }
 
   .footer-contacts {
@@ -901,18 +908,18 @@
     font-size: 1.25rem !important;
     color: var(--color-primary) !important;
     margin-top: 0 !important;
-    margin-bottom: 0.75rem !important;
+    margin-bottom: 1rem !important;
     font-weight: 700 !important;
     text-align: center !important;
   }
 
   .footer-brand .logo-title {
-    font-size: 0.65rem !important;
+    font-size: 0.68rem !important;
     letter-spacing: 0.08em !important;
     text-transform: uppercase !important;
     color: var(--color-text-muted) !important;
     margin-top: 0.15rem !important;
-    margin-bottom: 1rem !important;
+    margin-bottom: 1.25rem !important;
     line-height: 1.4 !important;
     display: block !important;
     max-width: 100% !important;
@@ -921,24 +928,36 @@
   }
 
   .footer-links button,
-  .footer-links a,
+  .footer-links a {
+    font-size: 0.95rem !important;
+    margin-bottom: 0.75rem !important;
+    color: var(--color-text-muted) !important;
+    display: block !important;
+    text-align: left !important;
+    line-height: 1.5 !important;
+    text-decoration: none !important;
+    width: 100% !important;
+    max-width: 270px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    transition: color 0.2s ease !important;
+  }
+
   .footer-contacts p {
     font-size: 0.95rem !important;
     margin-bottom: 0.75rem !important;
     color: var(--color-text-muted) !important;
     display: block !important;
-    text-align: center !important;
+    text-align: left !important;
     line-height: 1.5 !important;
-    text-decoration: none !important;
-  }
-
-  .footer-links button {
-    background: none !important;
-    border: none !important;
-    padding: 0 !important;
-    cursor: pointer !important;
-    text-align: center !important;
-    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 270px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   .footer-links button:hover,
@@ -951,8 +970,9 @@
     line-height: 1.6 !important;
     color: var(--color-text-muted) !important;
     opacity: 0.9 !important;
-    margin-top: 1rem !important;
+    margin-top: 1.25rem !important;
     text-align: center !important;
+    width: 100% !important;
   }
 }
 
