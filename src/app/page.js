@@ -113,8 +113,8 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Background Section 1: Hero + About */}
-      <div className="bg-section bg-section-1">
+      {/* Background Section Hero */}
+      <div className="bg-section bg-section-hero">
         {/* Hero Section (Cindy Layout Clone: Left Image Hexagon, Right Tagline & Description) */}
         <section className="cindy-hero-section">
           <div className="container">
@@ -136,7 +136,10 @@ export default function Home() {
             </div>
           </div>
         </section>
+      </div>
 
+      {/* Background Section Welcome */}
+      <div className="bg-section bg-section-welcome">
         {/* Welcome / Intro Section */}
         <section id="about" className="cindy-welcome-section">
           <div className="container">
@@ -172,8 +175,8 @@ export default function Home() {
         </section>
       </div>
 
-      {/* Background Section 2: Quote */}
-      <div className="bg-section bg-section-2">
+      {/* Background Section Quote */}
+      <div className="bg-section bg-section-quote">
         {/* Quote / Mission Section */}
         <section className="cindy-quote-section">
           <div className="container">
@@ -189,8 +192,8 @@ export default function Home() {
         </section>
       </div>
 
-      {/* Background Section 3: Services + FAQ */}
-      <div className="bg-section bg-section-3">
+      {/* Background Section Services */}
+      <div className="bg-section bg-section-services">
         {/* Services Offered Section */}
         <section id="services" className="cindy-services-section">
           <div className="container">
@@ -230,7 +233,10 @@ export default function Home() {
             </div>
           </div>
         </section>
+      </div>
 
+      {/* Background Section FAQ */}
+      <div className="bg-section bg-section-faq">
         {/* FAQ Section */}
         <section id="faq" className="faq-section">
           <div className="container">
@@ -287,8 +293,8 @@ export default function Home() {
         </section>
       </div>
 
-      {/* Background Section 4: Booking */}
-      <div className="bg-section bg-section-4">
+      {/* Background Section Booking */}
+      <div className="bg-section bg-section-booking">
         {/* Booking and Calendar Section */}
         <section id="booking" className="booking-section">
           <div className="container">

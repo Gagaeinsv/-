@@ -2371,9 +2371,7 @@ hr {
   background-repeat: no-repeat;
   background-attachment: scroll;
   width: 100%;
-}
-
-.bg-section-1 {
+}.bg-section-hero {
   background-image: 
     linear-gradient(to right, rgba(229, 226, 209, 0.05) 0%, rgba(229, 226, 209, 0.25) 45%, rgba(229, 226, 209, 0.85) 75%, var(--color-bg) 95%),
     linear-gradient(to bottom, transparent 60%, var(--color-white) 100%),
@@ -2381,12 +2379,20 @@ hr {
   background-position: right top;
 }
 
-.bg-section-2 {
+.bg-section-welcome {
+  background-image: 
+    linear-gradient(to right, rgba(229, 226, 209, 0.05) 0%, rgba(229, 226, 209, 0.25) 45%, rgba(229, 226, 209, 0.85) 75%, var(--color-bg) 95%),
+    linear-gradient(to bottom, transparent 60%, var(--color-white) 100%),
+    url('/bg4.jpg');
+  background-position: right top;
+}
+
+.bg-section-quote {
   background-image: linear-gradient(rgba(34, 44, 36, 0.75), rgba(34, 44, 36, 0.75)), url('/bg5.jpg');
   background-position: right top;
 }
 
-.bg-section-3 {
+.bg-section-services {
   background-image: 
     linear-gradient(to right, rgba(229, 226, 209, 0.05) 0%, rgba(229, 226, 209, 0.25) 45%, rgba(229, 226, 209, 0.85) 75%, var(--color-bg) 95%),
     linear-gradient(to bottom, transparent 70%, var(--color-white) 100%),
@@ -2394,8 +2400,15 @@ hr {
   background-position: left top;
 }
 
+.bg-section-faq {
+  background-image: 
+    linear-gradient(to right, rgba(229, 226, 209, 0.05) 0%, rgba(229, 226, 209, 0.25) 45%, rgba(229, 226, 209, 0.85) 75%, var(--color-bg) 95%),
+    linear-gradient(to bottom, transparent 70%, var(--color-white) 100%),
+    url('/bg2.jpg');
+  background-position: right top;
+}
 
-.bg-section-4 {
+.bg-section-booking {
   background-image: 
     linear-gradient(to right, rgba(229, 226, 209, 0.05) 0%, rgba(229, 226, 209, 0.25) 45%, rgba(229, 226, 209, 0.85) 75%, var(--color-bg) 95%),
     linear-gradient(to bottom, transparent 70%, var(--color-white) 100%),

@@ -603,23 +603,44 @@
     background-attachment: scroll !important;
   }
   
-  .bg-section-1 {
-    background-image: linear-gradient(to bottom, rgba(229, 226, 209, 0.25) 0%, rgba(229, 226, 209, 0.7) 45%, var(--color-bg) 80%), url('/bg3.jpg') !important;
-    background-position: right top !important;
+  .bg-section-hero {
+    background-image: 
+      linear-gradient(to bottom, rgba(229, 226, 209, 0.1) 0%, rgba(229, 226, 209, 0.4) 220px, var(--color-bg) 350px, var(--color-bg) 100%), 
+      url('/bg3.jpg') !important;
+    background-position: center top !important;
   }
   
-  .bg-section-2 {
-    background-position: right top !important;
+  .bg-section-welcome {
+    background-image: 
+      linear-gradient(to bottom, rgba(229, 226, 209, 0.1) 0%, rgba(229, 226, 209, 0.4) 220px, var(--color-bg) 350px, var(--color-bg) 100%), 
+      url('/bg4.jpg') !important;
+    background-position: center top !important;
   }
   
-  .bg-section-3 {
-    background-image: linear-gradient(to bottom, rgba(229, 226, 209, 0.2) 0%, rgba(229, 226, 209, 0.7) 45%, var(--color-bg) 80%), url('/bg1.jpg') !important;
-    background-position: left top !important;
+  .bg-section-quote {
+    background-image: linear-gradient(rgba(34, 44, 36, 0.8), rgba(34, 44, 36, 0.8)), url('/bg5.jpg') !important;
+    background-position: center top !important;
   }
   
-  .bg-section-4 {
-    background-image: linear-gradient(to bottom, rgba(229, 226, 209, 0.25) 0%, rgba(229, 226, 209, 0.7) 50%, var(--color-bg) 85%), url('/nature_booking_bg.png') !important;
-    background-position: center !important;
+  .bg-section-services {
+    background-image: 
+      linear-gradient(to bottom, rgba(229, 226, 209, 0.1) 0%, rgba(229, 226, 209, 0.4) 220px, var(--color-bg) 350px, var(--color-bg) 100%), 
+      url('/bg1.jpg') !important;
+    background-position: center top !important;
+  }
+  
+  .bg-section-faq {
+    background-image: 
+      linear-gradient(to bottom, rgba(229, 226, 209, 0.1) 0%, rgba(229, 226, 209, 0.4) 220px, var(--color-bg) 350px, var(--color-bg) 100%), 
+      url('/bg2.jpg') !important;
+    background-position: center top !important;
+  }
+  
+  .bg-section-booking {
+    background-image: 
+      linear-gradient(to bottom, rgba(229, 226, 209, 0.15) 0%, rgba(229, 226, 209, 0.5) 250px, var(--color-bg) 380px, var(--color-bg) 100%), 
+      url('/nature_booking_bg.png') !important;
+    background-position: center center !important;
   }
 }
 
