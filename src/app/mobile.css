@@ -903,6 +903,7 @@
     margin-top: 0 !important;
     margin-bottom: 0.75rem !important;
     font-weight: 700 !important;
+    text-align: center !important;
   }
 
   .footer-brand .logo-title {
@@ -916,6 +917,7 @@
     display: block !important;
     max-width: 100% !important;
     white-space: normal !important;
+    text-align: center !important;
   }
 
   .footer-links button,
@@ -925,7 +927,7 @@
     margin-bottom: 0.75rem !important;
     color: var(--color-text-muted) !important;
     display: block !important;
-    text-align: left !important;
+    text-align: center !important;
     line-height: 1.5 !important;
     text-decoration: none !important;
   }
@@ -935,7 +937,8 @@
     border: none !important;
     padding: 0 !important;
     cursor: pointer !important;
-    text-align: left !important;
+    text-align: center !important;
+    margin: 0 auto !important;
   }
 
   .footer-links button:hover,
@@ -949,6 +952,7 @@
     color: var(--color-text-muted) !important;
     opacity: 0.9 !important;
     margin-top: 1rem !important;
+    text-align: center !important;
   }
 }
 
