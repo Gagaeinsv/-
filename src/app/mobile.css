@@ -373,13 +373,19 @@
   .site-header {
     top: 0 !important;
     position: sticky !important;
+    background: rgba(250, 251, 251, 0.92) !important;
+    backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid var(--glass-border) !important;
+    box-shadow: 0 2px 15px rgba(34, 44, 36, 0.04) !important;
+    width: 100% !important;
   }
 
   .header-container {
-    height: 65px !important;
+    height: 60px !important;
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
+    padding: 0 1.25rem !important;
   }
 
   /* Hero Section Stacking & Formatting */
@@ -739,6 +745,128 @@
     padding-left: 0 !important;
     padding-right: 0 !important;
     box-sizing: border-box !important;
+  }
+
+  /* Booking Form Responsive Alignment & Overflow Fixes */
+  .booking-card {
+    padding: 1.5rem 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .slots-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+  }
+  
+  .slot-btn {
+    padding: 0.65rem 0.5rem !important;
+    font-size: 0.85rem !important;
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .payment-select-grid {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .payment-option {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+  }
+
+  .payment-option > div {
+    min-width: 0 !important; /* Prevents text overflow stretching the parent container */
+    flex: 1 1 auto !important;
+  }
+
+  .payment-option div p {
+    white-space: normal !important;
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+  
+  .payment-option div strong {
+    font-size: 0.95rem !important;
+    display: block !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  /* Premium Mobile Footer overrides */
+  .site-footer {
+    padding: 3rem 0 2rem !important;
+    background-color: var(--color-primary-light) !important;
+  }
+
+  .footer-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .footer-brand,
+  .footer-links,
+  .footer-contacts {
+    padding-bottom: 1.5rem !important;
+    border-bottom: 1px solid rgba(22, 78, 78, 0.08) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .footer-contacts {
+    border-bottom: none !important; /* Remove divider for the last item */
+  }
+
+  .footer-brand h3,
+  .footer-links h4,
+  .footer-contacts h4 {
+    font-size: 1.2rem !important;
+    color: var(--color-primary) !important;
+    margin-top: 0 !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .footer-links button,
+  .footer-links a,
+  .footer-contacts p {
+    font-size: 0.95rem !important;
+    margin-bottom: 0.65rem !important;
+    color: var(--color-text-muted) !important;
+    display: block !important;
+    text-align: left !important;
+    line-height: 1.5 !important;
+  }
+
+  .footer-links button {
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    text-decoration: underline !important;
+  }
+
+  .footer-legal-text {
+    font-size: 0.85rem !important;
+    line-height: 1.6 !important;
+    color: var(--color-text-muted) !important;
+    opacity: 0.9 !important;
   }
 }
 
