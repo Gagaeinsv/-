@@ -747,11 +747,51 @@
     box-sizing: border-box !important;
   }
 
-  /* Booking Form Responsive Alignment & Overflow Fixes */
+  /* Prevent Flexbox parent container stretch from carousels and wide items */
+  .cindy-booking-layout-grid,
+  .cindy-booking-content-col,
+  .booking-box-container,
+  .booking-step,
+  .dates-carousel,
+  .slots-grid,
+  .payment-select-grid {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Explicit flex column stacking for the booking form and card */
+  .booking-form-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    gap: 1.5rem !important;
+    box-sizing: border-box !important;
+  }
+
   .booking-card {
     padding: 1.5rem 1rem !important;
     width: 100% !important;
     max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .booking-card form {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Booking helper microcopy responsive adjustments */
+  .booking-helper-microcopy {
+    padding: 1.5rem 1.25rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
     box-sizing: border-box !important;
   }
 
