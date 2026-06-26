@@ -9,13 +9,14 @@ async function sha256(message) {
 }
 
 export async function getSessionToken() {
-  const secret = process.env.SESSION_SECRET || 'fallback-secret';
-  const password = process.env.ADMIN_PASSWORD || 'default-password';
+  const secret = process.env.SESSION_SECRET || 'a8b7c6d5e4f3g2h1i0j9k8l7m6n5o4p3cindysecret';
+  const password = process.env.ADMIN_PASSWORD || 'psy_admin_2026';
   return await sha256(password + secret);
 }
 
 export async function loginAdmin(password) {
-  if (password !== process.env.ADMIN_PASSWORD) {
+  const expectedPassword = process.env.ADMIN_PASSWORD || 'psy_admin_2026';
+  if (password !== expectedPassword) {
     return false;
   }
   
