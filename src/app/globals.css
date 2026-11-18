@@ -145,6 +145,20 @@ hr {
 .btn-gold:hover:not(:disabled) {
   background-color: var(--color-accent-hover);
   transform: translateY(-1px);
+  color: #FFFFFF;
+}
+
+.btn-glass-light {
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(10px);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+}
+
+.btn-glass-light:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.24);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #FFFFFF;
 }
 
 /* Loader */
@@ -267,45 +281,144 @@ hr {
 .y-burger.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
 /* ==========================================================================
-   EDITORIAL HERO
+   FULL-BLEED PHOTO STAGES & GLASSMORPHIC OVERLAYS
+   ========================================================================== */
+.photo-stage {
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-stage-bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 56%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.photo-stage.photo-right > .photo-stage-bg {
+  right: 0;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.55) 26%, #000000 56%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.55) 26%, #000000 56%);
+}
+
+.photo-stage.photo-left > .photo-stage-bg {
+  left: 0;
+  -webkit-mask-image: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.55) 26%, #000000 56%);
+  mask-image: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.55) 26%, #000000 56%);
+}
+
+.photo-stage-full {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.photo-stage-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-stage-img.hero-pos {
+  object-position: center 12%;
+}
+
+.photo-stage-img.about-pos {
+  object-position: center 15%;
+}
+
+.photo-stage-img.quote-bridge-pos {
+  object-position: 18% 20%;
+}
+
+.photo-stage-img.family-pos {
+  object-position: center 14%;
+}
+
+.photo-stage-img.sup-pos {
+  object-position: center 14%;
+}
+
+.photo-stage-veil {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.veil-studio-left {
+  background:
+    linear-gradient(270deg, rgba(22, 27, 23, 0.97) 0%, rgba(22, 27, 23, 0.78) 38%, rgba(22, 27, 23, 0.08) 72%, rgba(22, 27, 23, 0.04) 100%),
+    linear-gradient(180deg, rgba(22, 27, 23, 0.25) 0%, transparent 18%, transparent 80%, rgba(22, 27, 23, 0.92) 100%);
+}
+
+.veil-bridge-quote {
+  background: linear-gradient(90deg, rgba(22, 32, 24, 0.24) 0%, rgba(22, 32, 24, 0.78) 46%, rgba(22, 32, 24, 0.94) 100%);
+}
+
+.veil-sand-right {
+  background:
+    linear-gradient(90deg, rgba(245, 242, 235, 0.97) 0%, rgba(245, 242, 235, 0.8) 38%, rgba(245, 242, 235, 0.08) 72%, rgba(245, 242, 235, 0.04) 100%),
+    linear-gradient(180deg, rgba(245, 242, 235, 0.22) 0%, transparent 18%, transparent 82%, rgba(245, 242, 235, 0.9) 100%);
+}
+
+.veil-alabaster-left {
+  background:
+    linear-gradient(270deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.84) 38%, rgba(255, 255, 255, 0.08) 72%, rgba(255, 255, 255, 0.04) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.22) 0%, transparent 18%, transparent 82%, rgba(255, 255, 255, 0.92) 100%);
+}
+
+.veil-forest-right {
+  background:
+    linear-gradient(90deg, rgba(28, 39, 31, 0.98) 0%, rgba(28, 39, 31, 0.82) 38%, rgba(28, 39, 31, 0.08) 72%, rgba(28, 39, 31, 0.04) 100%),
+    linear-gradient(180deg, rgba(28, 39, 31, 0.22) 0%, transparent 18%, transparent 82%, rgba(28, 39, 31, 0.92) 100%);
+}
+
+.veil-sand-mist {
+  background: rgba(245, 242, 235, 0.82);
+  backdrop-filter: blur(2px);
+}
+
+.photo-stage-content {
+  position: relative;
+  z-index: 3;
+}
+
+/* ==========================================================================
+   EDITORIAL HERO (DARK STUDIO BACKDROP)
    ========================================================================== */
 .y-hero {
+  min-height: 690px;
+  display: flex;
+  align-items: center;
   padding: 4.5rem 0 5rem;
+}
+
+.y-hero.dark-studio {
+  background: #161B17;
+  color: #F5F2EB;
 }
 
 .y-hero-grid {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
-  gap: 4rem;
-  align-items: center;
+  gap: 3.5rem;
+  align-items: end;
 }
 
-.y-hero-media {
-  position: relative;
-}
-
-.y-editorial-frame {
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  aspect-ratio: 4 / 5;
-  border: 1px solid rgba(182, 132, 70, 0.45);
-  padding: 0.55rem;
-  background: var(--color-surface);
-  box-shadow: var(--shadow-soft);
-}
-
-.y-hero-portrait {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 15%;
-  border-radius: calc(var(--radius-md) - 4px);
-  display: block;
+.y-hero-window {
+  min-height: 520px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
 }
 
 .y-portrait-caption {
-  margin-top: 1rem;
-  background: var(--color-surface);
+  background: rgba(255, 255, 255, 0.92);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: 0.85rem 1.15rem;
@@ -313,6 +426,13 @@ hr {
   align-items: center;
   gap: 0.85rem;
   box-shadow: var(--shadow-card);
+}
+
+.y-portrait-caption.dark-glass {
+  background: rgba(20, 25, 21, 0.72);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
 }
 
 .y-mini-avatar {
@@ -335,9 +455,17 @@ hr {
   color: var(--color-primary);
 }
 
+.y-portrait-caption.dark-glass strong {
+  color: #FFFFFF;
+}
+
 .y-portrait-caption span {
   font-size: 0.82rem;
   color: var(--color-muted);
+}
+
+.y-portrait-caption.dark-glass span {
+  color: rgba(245, 242, 235, 0.82);
 }
 
 .y-overline {
@@ -359,9 +487,17 @@ hr {
   margin-bottom: 1.1rem;
 }
 
+.y-hero-content.dark-surface h1 {
+  color: #FFFFFF;
+}
+
 .y-hero-content h1 em {
   font-style: italic;
   color: var(--color-accent);
+}
+
+.y-hero-content.dark-surface h1 em {
+  color: #DFB172;
 }
 
 .y-hero-sub {
@@ -371,11 +507,19 @@ hr {
   margin-bottom: 0.85rem;
 }
 
+.y-hero-content.dark-surface .y-hero-sub {
+  color: #E7CEAA;
+}
+
 .y-hero-lead {
   color: var(--color-muted);
   font-size: 1.03rem;
   margin-bottom: 2rem;
   max-width: 580px;
+}
+
+.y-hero-content.dark-surface .y-hero-lead {
+  color: rgba(245, 242, 235, 0.84);
 }
 
 .y-hero-btns {
@@ -401,50 +545,76 @@ hr {
   color: var(--color-primary);
 }
 
+.y-credentials-row.dark span {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #F5F2EB;
+}
+
 /* ==========================================================================
-   QUOTE STRIP
+   QUOTE STRIP (FULL-BLEED BRIDGE BACKDROP)
    ========================================================================== */
 .y-quote-strip {
-  background: var(--color-bg-sand);
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-  padding: 3rem 0;
+  background: #162018;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 5.5rem 0;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+}
+
+.y-quote-grid {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.y-quote-window {
+  min-height: 220px;
 }
 
 .y-quote-inner {
-  max-width: 880px;
-  text-align: center;
+  text-align: left;
 }
 
 .y-quote-mark {
   font-family: var(--font-serif);
   font-size: 3.5rem;
   line-height: 0.6;
-  color: var(--color-accent);
+  color: #DFB172;
   display: block;
   margin-bottom: 0.75rem;
 }
 
 .y-quote-inner blockquote {
   font-family: var(--font-serif);
-  font-size: clamp(1.45rem, 2.6vw, 2rem);
+  font-size: clamp(1.45rem, 2.6vw, 2.05rem);
   font-style: italic;
-  color: var(--color-primary);
-  line-height: 1.4;
+  color: #FFFFFF;
+  line-height: 1.42;
 }
 
 /* ==========================================================================
-   ABOUT & PHILOSOPHY
+   ABOUT & PHILOSOPHY (PORTRAIT RIGHT BACKDROP)
    ========================================================================== */
 .y-about {
   padding: 5.5rem 0;
+  background: var(--color-bg);
+  min-height: 620px;
 }
 
 .y-about-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1.15fr 0.85fr;
   gap: 3.5rem;
   align-items: center;
+}
+
+.y-about-window {
+  min-height: 480px;
 }
 
 .y-about-text-col h2 {
@@ -453,14 +623,23 @@ hr {
 }
 
 .y-about-lead {
-  color: var(--color-muted);
+  color: var(--color-text);
   font-size: 1.04rem;
   line-height: 1.75;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 }
 
 .y-atelier-facts {
   border-top: 1px solid var(--color-border);
+}
+
+.y-atelier-facts.glass-panel {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: var(--radius-md);
+  padding: 0.5rem 1.4rem;
+  box-shadow: var(--shadow-soft);
 }
 
 .y-fact-row {
@@ -470,6 +649,10 @@ hr {
   padding: 0.9rem 0;
   border-bottom: 1px solid var(--color-border);
   font-size: 0.94rem;
+}
+
+.y-fact-row:last-child {
+  border-bottom: none;
 }
 
 .y-fact-row span {
@@ -486,35 +669,21 @@ hr {
   font-weight: 600;
 }
 
-.y-secondary-frame {
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  aspect-ratio: 4 / 5;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid var(--color-border);
-}
-
-.y-secondary-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 15%;
-  display: block;
-}
-
 /* ==========================================================================
-   SPECIALIZED FOCUS SECTIONS (LIGHT & DARK ATELIER)
+   SPECIALIZED FOCUS SECTIONS (FULL-BLEED BACKDROPS)
    ========================================================================== */
 .y-focus-light {
   padding: 5.5rem 0;
   background: var(--color-surface);
   border-top: 1px solid var(--color-border);
+  min-height: 620px;
 }
 
 .y-focus-dark {
   padding: 5.5rem 0;
-  background: var(--color-primary);
+  background: #1C271F;
   color: #F5F2EB;
+  min-height: 620px;
 }
 
 .y-focus-dark h2, .y-focus-dark h3 {
@@ -532,16 +701,16 @@ hr {
   grid-template-columns: 1.15fr 0.85fr;
 }
 
+.y-split-window {
+  min-height: 480px;
+}
+
 .y-portrait-card {
   border-radius: var(--radius-md);
   overflow: hidden;
   aspect-ratio: 4 / 5;
   box-shadow: var(--shadow-soft);
   border: 1px solid var(--color-border);
-}
-
-.y-portrait-card.dark {
-  border-color: rgba(182, 132, 70, 0.45);
 }
 
 .y-portrait-card img {
@@ -563,7 +732,7 @@ hr {
 }
 
 .y-split-desc.light {
-  color: rgba(245, 242, 235, 0.82);
+  color: rgba(245, 242, 235, 0.84);
 }
 
 .y-focus-cards, .y-dark-cards {
@@ -574,18 +743,21 @@ hr {
 }
 
 .y-focus-item {
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.84);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.72);
   border-radius: var(--radius-md);
   padding: 1.25rem;
   display: flex;
   gap: 1rem;
   align-items: flex-start;
+  box-shadow: var(--shadow-card);
 }
 
 .y-dark-item {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(20, 28, 22, 0.66);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: var(--radius-md);
   padding: 1.25rem;
   display: flex;
@@ -709,11 +881,13 @@ hr {
 
 .y-booking-sec {
   padding: 5.5rem 0;
+  background: var(--color-bg);
 }
 
 .y-booking-shell {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: var(--radius-lg);
   padding: 2.25rem;
   box-shadow: var(--shadow-soft);
@@ -721,8 +895,9 @@ hr {
 
 .y-booking-note {
   margin-top: 1.5rem;
-  background: var(--color-bg-sand);
-  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: var(--radius-md);
   padding: 1.15rem 1.5rem;
   text-align: center;
@@ -2534,6 +2709,7 @@ hr {
    ========================================================================== */
 @media (max-width: 1024px) {
   .y-hero-grid,
+  .y-quote-grid,
   .y-about-grid,
   .y-split-block,
   .y-split-block.reverse,
@@ -2541,7 +2717,71 @@ hr {
   .bw-datetime-grid,
   .adm-sched-split {
     grid-template-columns: 1fr;
-    gap: 2.25rem;
+    gap: 2rem;
+  }
+
+  .photo-stage.photo-right > .photo-stage-bg,
+  .photo-stage.photo-left > .photo-stage-bg {
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 430px;
+    bottom: auto;
+    -webkit-mask-image: linear-gradient(to bottom, #000000 45%, rgba(0, 0, 0, 0.35) 78%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000000 45%, rgba(0, 0, 0, 0.35) 78%, transparent 100%);
+  }
+
+  .veil-studio-left {
+    background: linear-gradient(180deg, rgba(22, 27, 23, 0.06) 0%, rgba(22, 27, 23, 0.62) 62%, rgba(22, 27, 23, 0.98) 96%);
+  }
+
+  .veil-bridge-quote {
+    background: linear-gradient(180deg, rgba(22, 32, 24, 0.14) 0%, rgba(22, 32, 24, 0.72) 55%, rgba(22, 32, 24, 0.96) 100%);
+  }
+
+  .veil-sand-right {
+    background: linear-gradient(180deg, rgba(245, 242, 235, 0.06) 0%, rgba(245, 242, 235, 0.6) 62%, rgba(245, 242, 235, 0.98) 96%);
+  }
+
+  .veil-alabaster-left {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.62) 62%, rgba(255, 255, 255, 0.98) 96%);
+  }
+
+  .veil-forest-right {
+    background: linear-gradient(180deg, rgba(28, 39, 31, 0.06) 0%, rgba(28, 39, 31, 0.64) 62%, rgba(28, 39, 31, 0.98) 96%);
+  }
+
+  .y-hero {
+    min-height: auto;
+    align-items: flex-start;
+    padding: 2rem 0 3.5rem;
+  }
+
+  .y-hero-window {
+    min-height: 290px;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .y-quote-strip {
+    min-height: 400px;
+    padding: 3rem 0;
+  }
+
+  .y-quote-window {
+    min-height: 210px;
+  }
+
+  .y-about,
+  .y-focus-light,
+  .y-focus-dark {
+    min-height: auto;
+  }
+
+  .y-about-window,
+  .y-split-window {
+    order: -1;
+    min-height: 290px;
   }
 
   .y-services-grid,
@@ -2640,7 +2880,20 @@ hr {
   }
 
   .y-hero {
-    padding: 2.25rem 0 3.25rem;
+    padding: 1.5rem 0 3rem;
+  }
+
+  .y-hero-window {
+    min-height: 260px;
+  }
+
+  .y-about-window,
+  .y-split-window {
+    min-height: 260px;
+  }
+
+  .y-quote-window {
+    min-height: 190px;
   }
 
   .y-hero-btns {
@@ -2658,7 +2911,7 @@ hr {
     font-size: 0.78rem;
   }
 
-  .y-editorial-frame, .y-secondary-frame, .y-portrait-card {
+  .y-portrait-card {
     max-width: 360px;
     margin: 0 auto;
   }

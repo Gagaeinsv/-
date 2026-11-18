@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Modal from '@/components/Modal';
 import BookingWidget from '@/components/BookingWidget';
 import { getFallbackPayload } from '@/lib/defaultData';
@@ -140,15 +141,30 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* Editorial Magazine Hero */}
-      <section className="y-hero">
-        <div className="container y-hero-grid">
-          <div className="y-hero-media">
-            <div className="y-editorial-frame">
-              <img src="/bg3.jpg" alt={profile.name} className="y-hero-portrait" />
-            </div>
-            <div className="y-portrait-caption">
-              <img src="/avatar_new.png" alt={profile.name} className="y-mini-avatar" />
+      {/* Editorial Magazine Hero with Full-Bleed Studio Portrait Backdrop */}
+      <section className="y-hero photo-stage photo-left dark-studio">
+        <div className="photo-stage-bg" aria-hidden="true">
+          <Image
+            src="/bg3.jpg"
+            alt=""
+            fill
+            priority
+            sizes="(max-width: 1024px) 100vw, 56vw"
+            className="photo-stage-img hero-pos"
+          />
+          <div className="photo-stage-veil veil-studio-left" />
+        </div>
+
+        <div className="container y-hero-grid photo-stage-content">
+          <div className="y-hero-window">
+            <div className="y-portrait-caption dark-glass">
+              <Image
+                src="/avatar_new.png"
+                alt={profile.name}
+                width={48}
+                height={48}
+                className="y-mini-avatar"
+              />
               <div>
                 <strong>{profile.name}</strong>
                 <span>Магістерка психології • {profile.experience}+ років практики</span>
@@ -156,8 +172,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="y-hero-content">
-            <span className="y-overline">Онлайн-кабінет психології та супервізії</span>
+          <div className="y-hero-content dark-surface">
+            <span className="y-overline gold">Онлайн-кабінет психології та супервізії</span>
             <h1>
               Простір глибинного розуміння, <em>сімейної гармонії</em> та професійної опори
             </h1>
@@ -167,15 +183,15 @@ export default function HomePage() {
             </p>
 
             <div className="y-hero-btns">
-              <a href="#booking" className="btn btn-primary btn-lg">
+              <a href="#booking" className="btn btn-gold btn-lg">
                 Забронювати консультацію
               </a>
-              <Link href="/cabinet" className="btn btn-secondary btn-lg">
+              <Link href="/cabinet" className="btn btn-glass-light btn-lg">
                 Особистий кабінет
               </Link>
             </div>
 
-            <div className="y-credentials-row">
+            <div className="y-credentials-row dark">
               <span>🎓 Магістерка психології</span>
               <span>✦ Сертифікована супервізорка</span>
               <span>🏛️ Психоаналітикиня у навчанні</span>
@@ -185,25 +201,50 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Editorial Quote Strip */}
-      <section className="y-quote-strip">
-        <div className="container y-quote-inner">
-          <span className="y-quote-mark">“</span>
-          <blockquote>
-            Я прагну допомогти людям почути й зрозуміти себе, знайти внутрішню стійкість, а колегам — сформувати власний впевнений терапевтичний голос.
-          </blockquote>
+      {/* Editorial Quote Strip over Full-Bleed Bridge Portrait */}
+      <section className="y-quote-strip photo-stage photo-full">
+        <div className="photo-stage-full" aria-hidden="true">
+          <Image
+            src="/bg5.jpg"
+            alt=""
+            fill
+            sizes="100vw"
+            className="photo-stage-img quote-bridge-pos"
+          />
+          <div className="photo-stage-veil veil-bridge-quote" />
+        </div>
+
+        <div className="container y-quote-grid photo-stage-content">
+          <div className="y-quote-window" aria-hidden="true" />
+          <div className="y-quote-inner">
+            <span className="y-quote-mark">“</span>
+            <blockquote>
+              Я прагну допомогти людям почути й зрозуміти себе, знайти внутрішню стійкість, а колегам — сформувати власний впевнений терапевтичний голос.
+            </blockquote>
+          </div>
         </div>
       </section>
 
-      {/* About & Philosophy Section */}
-      <section id="about" className="y-about">
-        <div className="container y-about-grid">
+      {/* About & Philosophy Section with Portrait Backdrop on Right */}
+      <section id="about" className="y-about photo-stage photo-right light-sand">
+        <div className="photo-stage-bg" aria-hidden="true">
+          <Image
+            src="/bg4.jpg"
+            alt=""
+            fill
+            sizes="(max-width: 1024px) 100vw, 56vw"
+            className="photo-stage-img about-pos"
+          />
+          <div className="photo-stage-veil veil-sand-right" />
+        </div>
+
+        <div className="container y-about-grid photo-stage-content">
           <div className="y-about-text-col">
             <span className="y-overline">Про фахівчиню</span>
             <h2>Інтегративний підхід та повага до вашої історії</h2>
             <p className="y-about-lead">{profile.bio}</p>
 
-            <div className="y-atelier-facts">
+            <div className="y-atelier-facts glass-panel">
               <div className="y-fact-row">
                 <span>Кваліфікація</span>
                 <strong>Магістерка психології, психоаналітикиня у навчанні</strong>
@@ -223,22 +264,25 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="y-about-media-col">
-            <div className="y-secondary-frame">
-              <img src="/bg4.jpg" alt={`${profile.name} — філософія роботи`} />
-            </div>
-          </div>
+          <div className="y-about-window" aria-hidden="true" />
         </div>
       </section>
 
-      {/* Focus Block A: Family & Individual Therapy */}
-      <section id="family-therapy" className="y-focus-light">
-        <div className="container y-split-block">
-          <div className="y-split-photo">
-            <div className="y-portrait-card">
-              <img src="/bg1.jpg" alt="Сімейна та індивідуальна терапія" />
-            </div>
-          </div>
+      {/* Focus Block A: Family & Individual Therapy over Golden-Hour Portrait */}
+      <section id="family-therapy" className="y-focus-light photo-stage photo-left light-sand">
+        <div className="photo-stage-bg" aria-hidden="true">
+          <Image
+            src="/bg1.jpg"
+            alt=""
+            fill
+            sizes="(max-width: 1024px) 100vw, 55vw"
+            className="photo-stage-img family-pos"
+          />
+          <div className="photo-stage-veil veil-alabaster-left" />
+        </div>
+
+        <div className="container y-split-block photo-stage-content">
+          <div className="y-split-window" aria-hidden="true" />
 
           <div className="y-split-content">
             <span className="y-overline">Напрямок І • Для клієнтів та родин</span>
@@ -249,7 +293,7 @@ export default function HomePage() {
 
             <div className="y-focus-cards">
               {(familySpecs.length > 0 ? familySpecs : specs).map((spec, idx) => (
-                <div key={spec.id || idx} className="y-focus-item">
+                <div key={spec.id || idx} className="y-focus-item glass-card">
                   <span className="y-num">0{idx + 1}</span>
                   <div>
                     <h3>{spec.name}</h3>
@@ -270,9 +314,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Focus Block B: Dark Deep Cypress Contrast Section for Colleagues */}
-      <section id="supervision" className="y-focus-dark">
-        <div className="container y-split-block reverse">
+      {/* Focus Block B: Dark Deep Cypress Contrast Section with Portrait on Right */}
+      <section id="supervision" className="y-focus-dark photo-stage photo-right dark-forest">
+        <div className="photo-stage-bg" aria-hidden="true">
+          <Image
+            src="/bg2.jpg"
+            alt=""
+            fill
+            sizes="(max-width: 1024px) 100vw, 55vw"
+            className="photo-stage-img sup-pos"
+          />
+          <div className="photo-stage-veil veil-forest-right" />
+        </div>
+
+        <div className="container y-split-block reverse photo-stage-content">
           <div className="y-split-content">
             <span className="y-overline gold">Напрямок ІІ • Для колег-психологів</span>
             <h2>Супервізія, Інтервізія та Менторство</h2>
@@ -282,7 +337,7 @@ export default function HomePage() {
 
             <div className="y-dark-cards">
               {(supervisionSpecs.length > 0 ? supervisionSpecs : specs).map((spec, idx) => (
-                <div key={spec.id || idx} className="y-dark-item">
+                <div key={spec.id || idx} className="y-dark-item dark-glass">
                   <span className="y-num gold">0{idx + 1}</span>
                   <div>
                     <h3>{spec.name}</h3>
@@ -301,11 +356,7 @@ export default function HomePage() {
             </button>
           </div>
 
-          <div className="y-split-photo">
-            <div className="y-portrait-card dark">
-              <img src="/bg2.jpg" alt="Супервізія та менторство для психологів" />
-            </div>
-          </div>
+          <div className="y-split-window" aria-hidden="true" />
         </div>
       </section>
 
@@ -343,9 +394,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Interactive Booking Section */}
-      <section id="booking" className="y-booking-sec">
-        <div className="container">
+      {/* Interactive Booking Section over Nature Bokeh */}
+      <section id="booking" className="y-booking-sec photo-stage">
+        <div className="photo-stage-full" aria-hidden="true">
+          <Image
+            src="/nature_booking_bg.png"
+            alt=""
+            fill
+            sizes="100vw"
+            className="photo-stage-img"
+          />
+          <div className="photo-stage-veil veil-sand-mist" />
+        </div>
+
+        <div className="container photo-stage-content">
           <div className="y-sec-head center">
             <span className="y-overline">Актуальний розклад</span>
             <h2>Запис на консультацію та Календар</h2>
@@ -378,7 +440,12 @@ export default function HomePage() {
         <div className="container y-faq-grid">
           <div className="y-faq-photo-col">
             <div className="y-portrait-card faq-photo">
-              <img src="/bg5.jpg" alt={`${profile.name} — часті запитання`} />
+              <Image
+                src="/bg5.jpg"
+                alt={`${profile.name} — часті запитання`}
+                width={681}
+                height={1024}
+              />
             </div>
           </div>
 
