@@ -195,10 +195,19 @@ hr {
 .y-header {
   position: sticky;
   top: 0;
-  z-index: 900;
-  background: rgba(245, 242, 235, 0.92);
-  backdrop-filter: blur(14px);
+  z-index: 950;
   border-bottom: 1px solid var(--color-border);
+}
+
+.y-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(245, 242, 235, 0.92);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .y-header-inner {
@@ -210,6 +219,8 @@ hr {
 }
 
 .y-brand {
+  position: relative;
+  z-index: 960;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -2713,6 +2724,8 @@ hr {
    ========================================================================== */
 @media (max-width: 1024px) {
   .y-burger {
+    position: relative;
+    z-index: 960;
     display: flex;
   }
 
@@ -2720,12 +2733,16 @@ hr {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(245, 242, 235, 0.98);
-    backdrop-filter: blur(16px);
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    background: #F5F2EB;
     flex-direction: column;
-    justify-content: center;
-    padding: 2rem;
-    gap: 1.25rem;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 6rem 1.5rem 2.5rem;
+    gap: 1.15rem;
+    overflow-y: auto;
     z-index: 920;
   }
 
@@ -2736,6 +2753,7 @@ hr {
   .y-nav > a {
     font-size: 1.2rem;
     font-weight: 600;
+    color: var(--color-primary);
   }
 
   .y-nav-actions {
