@@ -2579,7 +2579,24 @@ hr {
 
 @media (max-width: 768px) {
   .yarmola-site {
-    padding-bottom: 78px;
+    padding-bottom: 84px;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .y-about,
+  .y-focus-light,
+  .y-focus-dark,
+  .y-services,
+  .y-booking-sec,
+  .y-faq-sec {
+    padding: 3.5rem 0;
+  }
+
+  .y-sec-head {
+    margin-bottom: 2rem;
   }
 
   .y-burger {
@@ -2619,10 +2636,26 @@ hr {
 
   .y-nav-actions .btn {
     width: 100%;
+    min-height: 48px;
   }
 
   .y-hero {
-    padding: 2.5rem 0 3.5rem;
+    padding: 2.25rem 0 3.25rem;
+  }
+
+  .y-hero-btns {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .y-hero-btns .btn {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .y-credentials-row span {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.78rem;
   }
 
   .y-editorial-frame, .y-secondary-frame, .y-portrait-card {
@@ -2655,16 +2688,130 @@ hr {
     justify-content: center;
   }
 
+  /* Mobile-First Booking Calendar & Inputs */
+  .bw-mode-switcher {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    border-radius: var(--radius-md);
+  }
+
   .y-booking-shell {
-    padding: 1.25rem;
+    padding: 1rem;
+  }
+
+  .mc-calendar,
+  .bw-slots-pane,
+  .pay-details-box,
+  .bw-submit-bar {
+    padding: 0.95rem;
+  }
+
+  .mc-grid {
+    gap: 0.22rem;
+  }
+
+  .mc-cell {
+    min-height: 40px;
+    font-size: 0.84rem;
+    border-radius: 8px;
   }
 
   .bw-slots-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  input,
+  select,
+  textarea,
+  .adm-field input,
+  .adm-field select,
+  .adm-field textarea,
+  .adm-search-input {
+    font-size: 16px !important;
+  }
+
+  /* Client Cabinet Mobile (/cabinet) */
+  .cab-header-inner {
+    flex-wrap: wrap;
+  }
+
+  .cab-main {
+    padding: 1.5rem 1rem 4rem;
+  }
+
+  .cab-lookup-card, .cab-session-card {
+    padding: 1.15rem;
+  }
+
   .cab-lookup-form {
     flex-direction: column;
+  }
+
+  .cab-meeting-ready .btn {
+    width: 100%;
+  }
+
+  .cab-card-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cab-card-actions .btn {
+    width: 100%;
+  }
+
+  .cab-cancel-btn {
+    margin-left: 0;
+    text-align: center;
+    padding: 0.4rem 0;
+  }
+
+  /* Admin CRM Mobile (/admin) */
+  .adm-main {
+    padding: 1.15rem 1rem 3rem;
+  }
+
+  .adm-sidebar {
+    padding: 1.15rem 1rem;
+  }
+
+  .adm-nav {
+    gap: 0.35rem;
+  }
+
+  .adm-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+  }
+
+  .adm-metric-card {
+    padding: 0.9rem;
+  }
+
+  .adm-crm-right, .adm-search-input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .adm-bk-selects {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .adm-bk-foot {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .adm-card, .adm-manual-box, .adm-booking-card {
+    padding: 1.1rem;
+  }
+
+  .adm-day-slots-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .y-sticky-cta {
@@ -2676,7 +2823,33 @@ hr {
     background: rgba(245, 242, 235, 0.96);
     backdrop-filter: blur(10px);
     border-top: 1px solid var(--color-border);
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom, 0px));
     z-index: 880;
+  }
+}
+
+@media (max-width: 480px) {
+  .bw-messenger-row {
+    grid-template-columns: 1fr;
+  }
+
+  .bw-summary-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .bw-action-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .bw-action-row .btn {
+    width: 100%;
+  }
+
+  .mc-cell {
+    min-height: 36px;
+    font-size: 0.8rem;
   }
 }
