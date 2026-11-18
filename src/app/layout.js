@@ -1,10 +1,8 @@
-import "./globals.css";
-import "./mobile.css";
-
-import prisma from "@/lib/db";
+import './globals.css';
+import prisma from '@/lib/db';
 
 export const viewport = {
-  width: "device-width",
+  width: 'device-width',
   initialScale: 1,
 };
 
@@ -12,40 +10,35 @@ export async function generateMetadata() {
   try {
     const profile = await prisma.profile.findFirst();
     if (profile) {
-      const name = profile.name;
-      const title = profile.title;
-      const subtitle = profile.subtitle;
       return {
-        title: `${name} — Психолог, ${subtitle}`,
-        description: `Офіційні психологічні консультації та психотерапія. ${title}. Запис на сесію онлайн. ФОП ${name}.`,
+        title: `${profile.name} — ${profile.title}`,
+        description: `${profile.subtitle} Онлайн-консультації, сімейна терапія та супервізія для психологів.`,
         openGraph: {
-          title: `${name} — Психолог`,
-          description: `Професійна психотерапія, консультації та підтримка онлайн.`,
-          images: [{ url: "/avatar_new.png" }],
-        }
+          title: `${profile.name} — Сімейна психологиня та Супервізорка`,
+          description: 'Індивідуальна, сімейна терапія та полімодальна супервізія онлайн.',
+          images: [{ url: '/avatar_new.png' }],
+        },
       };
     }
   } catch (e) {
-    console.error("Error generating metadata dynamically:", e);
+    console.error('Metadata fallback:', e);
   }
 
   return {
-    title: "Психолог — Професійна психологічна допомога",
-    description: "Офіційні психологічні консультації та психотерапія. Запис на сесію онлайн.",
+    title: 'Ярмола Тетяна — Сімейна психологиня та Супервізорка',
+    description: 'Онлайн-консультації, сімейна терапія, супервізія та інтервізія.',
     openGraph: {
-      title: "Психолог — Професійна психологічна допомога",
-      description: "Офіційні психологічні консультації та психотерапія. Запис на сесію онлайн.",
-      images: [{ url: "/avatar_new.png" }],
-    }
+      title: 'Ярмола Тетяна — Сімейна психологиня',
+      description: 'Сімейна психологія, психоаналітичний підхід та супервізія онлайн.',
+      images: [{ url: '/avatar_new.png' }],
+    },
   };
 }
 
 export default function RootLayout({ children }) {
   return (
     <html lang="uk">
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
