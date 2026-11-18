@@ -40,6 +40,10 @@ html {
   overflow-x: clip;
 }
 
+section[id] {
+  scroll-margin-top: 80px;
+}
+
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
@@ -2708,80 +2712,58 @@ hr {
    RESPONSIVE BREAKPOINTS
    ========================================================================== */
 @media (max-width: 1024px) {
+  .y-burger {
+    display: flex;
+  }
+
+  .y-nav {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(245, 242, 235, 0.98);
+    backdrop-filter: blur(16px);
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    gap: 1.25rem;
+    z-index: 920;
+  }
+
+  .y-nav.open {
+    display: flex;
+  }
+
+  .y-nav > a {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .y-nav-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+    margin-left: 0;
+    margin-top: 0.75rem;
+  }
+
+  .y-nav-actions .btn {
+    width: 100%;
+    min-height: 48px;
+  }
+
   .y-hero-grid,
   .y-quote-grid,
   .y-about-grid,
   .y-split-block,
-  .y-split-block.reverse,
+  .y-split-block.reverse {
+    gap: 2rem;
+  }
+
   .y-faq-grid,
   .bw-datetime-grid,
   .adm-sched-split {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }
-
-  .photo-stage.photo-right > .photo-stage-bg,
-  .photo-stage.photo-left > .photo-stage-bg {
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 430px;
-    bottom: auto;
-    -webkit-mask-image: linear-gradient(to bottom, #000000 45%, rgba(0, 0, 0, 0.35) 78%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000000 45%, rgba(0, 0, 0, 0.35) 78%, transparent 100%);
-  }
-
-  .veil-studio-left {
-    background: linear-gradient(180deg, rgba(22, 27, 23, 0.06) 0%, rgba(22, 27, 23, 0.62) 62%, rgba(22, 27, 23, 0.98) 96%);
-  }
-
-  .veil-bridge-quote {
-    background: linear-gradient(180deg, rgba(22, 32, 24, 0.14) 0%, rgba(22, 32, 24, 0.72) 55%, rgba(22, 32, 24, 0.96) 100%);
-  }
-
-  .veil-sand-right {
-    background: linear-gradient(180deg, rgba(245, 242, 235, 0.06) 0%, rgba(245, 242, 235, 0.6) 62%, rgba(245, 242, 235, 0.98) 96%);
-  }
-
-  .veil-alabaster-left {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.62) 62%, rgba(255, 255, 255, 0.98) 96%);
-  }
-
-  .veil-forest-right {
-    background: linear-gradient(180deg, rgba(28, 39, 31, 0.06) 0%, rgba(28, 39, 31, 0.64) 62%, rgba(28, 39, 31, 0.98) 96%);
-  }
-
-  .y-hero {
-    min-height: auto;
-    align-items: flex-start;
-    padding: 2rem 0 3.5rem;
-  }
-
-  .y-hero-window {
-    min-height: 290px;
-    justify-content: center;
-    align-items: flex-end;
-  }
-
-  .y-quote-strip {
-    min-height: 400px;
-    padding: 3rem 0;
-  }
-
-  .y-quote-window {
-    min-height: 210px;
-  }
-
-  .y-about,
-  .y-focus-light,
-  .y-focus-dark {
-    min-height: auto;
-  }
-
-  .y-about-window,
-  .y-split-window {
-    order: -1;
-    min-height: 290px;
   }
 
   .y-services-grid,
@@ -2826,9 +2808,80 @@ hr {
     padding: 0 1rem;
   }
 
+  .y-hero-grid,
+  .y-quote-grid,
+  .y-about-grid,
+  .y-split-block,
+  .y-split-block.reverse {
+    grid-template-columns: 1fr;
+    gap: 1.35rem;
+  }
+
+  /* True aspect-ratio portrait stage for mobile phones: top 72% stays crisp over face */
+  .photo-stage.photo-right > .photo-stage-bg,
+  .photo-stage.photo-left > .photo-stage-bg {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    width: 100%;
+    aspect-ratio: 4 / 4.25;
+    max-height: 460px;
+    margin-bottom: -82px;
+    -webkit-mask-image: linear-gradient(to bottom, #000000 0%, #000000 72%, rgba(0, 0, 0, 0.45) 88%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000000 0%, #000000 72%, rgba(0, 0, 0, 0.45) 88%, transparent 100%);
+  }
+
+  .photo-stage-img.hero-pos {
+    object-position: center 12%;
+  }
+
+  .photo-stage-img.about-pos {
+    object-position: center 24%;
+  }
+
+  .photo-stage-img.family-pos {
+    object-position: center 20%;
+  }
+
+  .photo-stage-img.sup-pos {
+    object-position: center 16%;
+  }
+
+  .photo-stage-img.quote-bridge-pos {
+    object-position: 38% 16%;
+  }
+
+  .veil-studio-left {
+    background: linear-gradient(180deg, transparent 0%, transparent 56%, rgba(22, 27, 23, 0.72) 84%, rgba(22, 27, 23, 0.98) 100%);
+  }
+
+  .veil-bridge-quote {
+    background: linear-gradient(180deg, rgba(22, 32, 24, 0.04) 0%, rgba(22, 32, 24, 0.35) 45%, rgba(22, 32, 24, 0.88) 72%, rgba(22, 32, 24, 0.97) 100%);
+  }
+
+  .veil-sand-right {
+    background: linear-gradient(180deg, transparent 0%, transparent 56%, rgba(245, 242, 235, 0.74) 84%, rgba(245, 242, 235, 0.98) 100%);
+  }
+
+  .veil-alabaster-left {
+    background: linear-gradient(180deg, transparent 0%, transparent 56%, rgba(255, 255, 255, 0.76) 84%, rgba(255, 255, 255, 0.98) 100%);
+  }
+
+  .veil-forest-right {
+    background: linear-gradient(180deg, transparent 0%, transparent 56%, rgba(28, 39, 31, 0.74) 84%, rgba(28, 39, 31, 0.98) 100%);
+  }
+
+  .y-hero,
   .y-about,
   .y-focus-light,
-  .y-focus-dark,
+  .y-focus-dark {
+    min-height: auto;
+    display: block;
+    padding: 0 0 3.25rem;
+  }
+
   .y-services,
   .y-booking-sec,
   .y-faq-sec {
@@ -2839,61 +2892,25 @@ hr {
     margin-bottom: 2rem;
   }
 
-  .y-burger {
-    display: flex;
-  }
-
-  .y-nav {
-    position: fixed;
-    inset: 0;
-    background: rgba(245, 242, 235, 0.98);
-    backdrop-filter: blur(16px);
-    flex-direction: column;
-    justify-content: center;
-    padding: 2rem;
-    gap: 1.25rem;
-    transform: translateX(100%);
-    transition: transform 0.28s ease;
-    z-index: 920;
-  }
-
-  .y-nav.open {
-    transform: translateX(0);
-  }
-
-  .y-nav > a {
-    font-size: 1.2rem;
-    font-weight: 600;
-  }
-
-  .y-nav-actions {
-    flex-direction: column;
-    width: 100%;
-    max-width: 280px;
-    margin-left: 0;
-    margin-top: 0.75rem;
-  }
-
-  .y-nav-actions .btn {
-    width: 100%;
-    min-height: 48px;
-  }
-
-  .y-hero {
-    padding: 1.5rem 0 3rem;
-  }
-
   .y-hero-window {
-    min-height: 260px;
+    min-height: 0;
+    justify-content: flex-start;
+    margin-bottom: 0.25rem;
   }
 
   .y-about-window,
   .y-split-window {
-    min-height: 260px;
+    display: none;
+  }
+
+  .y-quote-strip {
+    min-height: 440px;
+    padding: 0 0 2.75rem;
+    align-items: flex-end;
   }
 
   .y-quote-window {
-    min-height: 190px;
+    min-height: 225px;
   }
 
   .y-hero-btns {
